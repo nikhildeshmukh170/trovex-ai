@@ -1,34 +1,120 @@
-import React from 'react';
-import TrovesAISteps from './TrovesAISteps';
+import React, { useState, useEffect, useRef } from "react";
+import TrovesAISteps from "./TrovesAISteps";
+
+const AnimatedNumber = ({ value, duration = 2000, suffix = "" }) => {
+  const [count, setCount] = useState(0);
+  const countRef = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          
+          let start = 0;
+          const end = parseInt(value);
+          const incrementTime = Math.abs(Math.floor(duration / end));
+          let timer;
+          
+          // Handle different formats (percentage vs multiplier)
+          if (suffix === "x") {
+            // For multipliers (e.g. 5x), animate from 0 to the value directly
+            timer = setInterval(() => {
+              start += 1;
+              setCount(start);
+              if (start >= end) {
+                clearInterval(timer);
+              }
+            }, 50);
+          } else {
+            // For percentages, animate with proper increments
+            timer = setInterval(() => {
+              start += 1;
+              setCount(start);
+              if (start >= end) {
+                clearInterval(timer);
+              }
+            }, incrementTime);
+          }
+          
+          return () => clearInterval(timer);
+        }
+      },
+      { threshold: 0.5 }
+    );
+    
+    if (countRef.current) {
+      observer.observe(countRef.current);
+    }
+    
+    return () => {
+      if (countRef.current) {
+        observer.unobserve(countRef.current);
+      }
+    };
+  }, [value, duration, hasAnimated, suffix]);
+
+  return (
+    <p 
+      ref={countRef} 
+      className="text-5xl font-bold bg-gradient-to-b from-purple-600 to-pink-500 bg-clip-text text-transparent"
+    >
+      {count}{suffix}
+    </p>
+  );
+};
 
 const TrovesAISection = () => {
   return (
-    <div className="flex flex-col items-center text-center py-12 bg-white">
+    <div className="flex flex-col items-center text-center py-12 bg-white gap-10">
       {/* Main heading */}
-      <h2 className="text-4xl font-bold text-black">
-        <span className="text-purple-500">Supercharge</span> your sales <span className="text-purple-500">training</span> with <span className="text-purple-500">AI</span> That Truly Delivers
-      </h2>
-      
-      {/* Subheading and description */}
-      <div className="mt-8 max-w-4xl px-4">
-        <h3 className="text-2xl font-semibold text-purple-500">The Trovex Advantage</h3>
-        <p className="text-gray-700 mt-2">
-          Trained on over <span className="font-bold">1.8 million hours</span> of B2B sales calls and <span className="font-bold">150,000+ roleplays</span>, Trovex AI empowers your team to close deals faster with hyper-realistic roleplays.
+      <h2 className="text-6xl font-bold text-black w-full max-w-[1000px] px-4">
+        <p className="bg-gradient-to-b from-purple-600 to-pink-500 bg-clip-text text-transparent font-bold">
+          Supercharge<span className="text-black"> your sales </span> training{" "}
+          <span className="text-black"> with </span>AI
+          <span className="text-black"> That Truly Delivers</span>
         </p>
-        
-        {/* Metrics section */}
-        <div className="flex flex-wrap justify-center gap-12 mt-6">
-          <div className="text-center w-36 sm:w-48">
-            <p className="text-4xl font-bold text-purple-500">45%</p>
-            <p className="text-gray-600">Faster speed to proficiency</p>
-          </div>
-          <div className="text-center w-36 sm:w-48">
-            <p className="text-4xl font-bold text-purple-500">21%</p>
-            <p className="text-gray-600">Improvement in win rates</p>
-          </div>
-          <div className="text-center w-36 sm:w-48">
-            <p className="text-4xl font-bold text-purple-500">5x</p>
-            <p className="text-gray-600">More practice</p>
+      </h2>
+
+      {/* Trovex Advantage Section */}
+      <div className="w-full py-12 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-8">
+            {/* Left text column */}
+            <div className="max-w-md text-left">
+              <h2 className="text-3xl font-bold bg-gradient-to-b from-purple-600 to-pink-500 bg-clip-text text-transparent mb-4">
+                The Trovex Advantage
+              </h2>
+              <p className="text-gray-700">
+                Trained on over{" "}
+                <span className="font-bold">1.8 million hours</span> of B2B
+                sales calls and{" "}
+                <span className="font-bold">150,000+ roleplays</span>, Trovex AI
+                empowers your team to close deals faster with hyper-realistic
+                roleplays.
+              </p>
+            </div>
+
+            {/* Right metrics columns */}
+            <div className="flex flex-row flex-wrap gap-10 md:gap-16 mt-4 md:mt-0">
+              <div className="text-center">
+                <AnimatedNumber value="45" suffix="%" />
+                <p className="text-gray-600 mt-2">
+                  Faster speed to proficiency
+                </p>
+              </div>
+
+              <div className="text-center">
+                <AnimatedNumber value="21" suffix="%" />
+                <p className="text-gray-600 mt-2">Improvement in win rates</p>
+              </div>
+
+              <div className="text-center">
+                <AnimatedNumber value="5" suffix="x" />
+                <p className="text-gray-600 mt-2">More practice</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

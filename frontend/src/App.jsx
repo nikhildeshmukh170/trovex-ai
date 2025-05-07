@@ -5,6 +5,7 @@ import TrovesAISection from './components/TrovesAISection';
 import Footer from './components/Footer';
 import Whytorvex from './components/whytorvex';
 import SolveProblem from './components/SolveProblem';
+import Rating from './components/Rating';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <TrovesAISection />
       <Whytorvex />
       <SolveProblem />
+      <Rating />
       <Footer />
     </div>
   );

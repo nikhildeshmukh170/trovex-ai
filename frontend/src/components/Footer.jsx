@@ -4,32 +4,33 @@ import rank from "../assets/FooterrankLogo.png";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col gap-30 relative m-4 px-30 py-7 h-auto w-auto bg-[#2f1043] rounded-3xl font-sans">
-      <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_300px_at_90%_250px,#715481,transparent)] opacity-70 rounded-3xl"></div>
-      <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_300px_at_10%_850px,#715481,transparent)] opacity-70 rounded-3xl"></div>
+    <div className="flex flex-col gap-8 md:gap-30 relative m-2 md:m-4 px-4 sm:px-6 md:px-30 py-7 h-auto w-auto bg-[#2f1043] rounded-3xl font-sans overflow-hidden">
+      <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_300px_at_90%_250px,#715481,transparent)] opacity-70 rounded-3xl"></div>
+      <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_300px_at_10%_850px,#715481,transparent)] opacity-70 rounded-3xl"></div>
+      
       {/* footer upper section */}
-      <div className="flex flex-col justify-center items-center gap-10">
-        <div className="mt-2 inline-block  bg-gradient-to-tr bg-purple-300 text-purple-700 px-3 py-1 rounded-full flex items-center space-x-2 text-xs text-gray-800">
+      <div className="flex flex-col justify-center items-center gap-6 md:gap-10 z-10">
+        <div className="mt-2 inline-block bg-gradient-to-tr bg-purple-300 text-purple-700 px-3 py-1 rounded-full flex items-center space-x-2 text-xs text-gray-800">
           Join the AI Revolution
         </div>
-        <div className="text-6xl text-white items-center justify-center font-bold font-sans w-[800px] text-center">
-          Ready To Revolutionise Your Sales Team’s Performance?
+        <div className="text-3xl sm:text-4xl md:text-6xl text-white items-center justify-center font-bold font-sans w-full md:w-[900px] text-center px-2">
+          Ready To Revolutionise Your Sales Team's Performance?
         </div>
-        <button className="bg-gradient-to-b from-purple-600 to-pink-600 text-white border border-transparent hover:bg-white hover:bg-none hover:text-purple-600 hover:border-purple-600 transition-all duration-500 ease-in-out px-6 py-3 rounded-lg font-semibold shadow-md z-11">
+        <button className="bg-gradient-to-b from-purple-600 to-pink-600 text-white border border-transparent hover:bg-white hover:bg-none hover:text-purple-600 hover:border-purple-600 transition-all duration-500 ease-in-out px-6 py-3 rounded-lg font-semibold shadow-md z-10">
           Talk to Sales
         </button>
       </div>
 
       {/* footer main section */}
-      <div className="text-white py-10 z-12">
+      <div className="text-white py-6 md:py-10 z-10">
         <hr className="border-t-1 border-pink-300 my-4" />
         <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-start">
           {/* Left side - Logo and badges */}
-          <div className="mb-8 md:mb-0">
+          <div className="mb-8 md:mb-0 w-full md:w-auto">
             {/* Logo */}
             <div className="flex flex-col items-start mb-5 gap-4">
-              <img src={footerlogo} alt="" className="w-64" />
-              <img src={rank} alt="" className="w-30" />
+              <img src={footerlogo} alt="" className="w-full max-w-[200px] md:w-64" />
+              <img src={rank} alt="" className="w-28 md:w-30" />
             </div>
 
             {/* Social links */}
@@ -65,23 +66,23 @@ const Footer = () => {
           </div>
 
           {/* Right side - Navigation menus */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 md:gap-10 w-full md:w-auto mt-6 md:mt-0">
             {/* Company column */}
             <div>
-              <h3 className="text-xl font-medium mb-4">Company</h3>
-              <ul className="space-y-3">
+              <h3 className="text-lg md:text-xl font-medium mb-3 md:mb-4">Company</h3>
+              <ul className="space-y-2 md:space-y-3">
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-white">
+                  <a href="#" className="text-gray-300 hover:text-white text-sm md:text-base">
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-white">
+                  <a href="#" className="text-gray-300 hover:text-white text-sm md:text-base">
                     Pricing
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-white">
+                  <a href="#" className="text-gray-300 hover:text-white text-sm md:text-base">
                     Book a Demo
                   </a>
                 </li>
@@ -90,25 +91,25 @@ const Footer = () => {
 
             {/* Product column */}
             <div>
-              <h3 className="text-xl font-medium mb-4">Product</h3>
-              <ul className="space-y-3">
+              <h3 className="text-lg md:text-xl font-medium mb-3 md:mb-4">Product</h3>
+              <ul className="space-y-2 md:space-y-3">
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-white">
+                  <a href="#" className="text-gray-300 hover:text-white text-sm md:text-base">
                     AI Coaching
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-white">
+                  <a href="#" className="text-gray-300 hover:text-white text-sm md:text-base">
                     AI Sales Role play
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-white">
+                  <a href="#" className="text-gray-300 hover:text-white text-sm md:text-base">
                     AI Real Call Scoring
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-white">
+                  <a href="#" className="text-gray-300 hover:text-white text-sm md:text-base">
                     AI Post-Sales Roleplays
                   </a>
                 </li>
@@ -117,15 +118,15 @@ const Footer = () => {
 
             {/* Resources column */}
             <div>
-              <h3 className="text-xl font-medium mb-4">Resources</h3>
-              <ul className="space-y-3">
+              <h3 className="text-lg md:text-xl font-medium mb-3 md:mb-4">Resources</h3>
+              <ul className="space-y-2 md:space-y-3">
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-white">
+                  <a href="#" className="text-gray-300 hover:text-white text-sm md:text-base">
                     Blog
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-white">
+                  <a href="#" className="text-gray-300 hover:text-white text-sm md:text-base">
                     Success Stories
                   </a>
                 </li>
@@ -136,31 +137,31 @@ const Footer = () => {
       </div>
 
       {/* footer bottom part */}
-      <div className="text-white -mt-[150px] relative ">
+      <div className="text-white -mt-16 sm:-mt-24 md:-mt-[150px] relative">
         {/* Large Trovex background text */}
-        <div className="realtive inset-0 flex items-center justify-center overflow-hidden z-0">
-          <span className="text-[300px] font-bold text-purple-300 opacity-30 tracking-tighter font-sans">
+        <div className="relative inset-0 flex items-center justify-center overflow-hidden z-0">
+          <span className="text-[100px] sm:text-[200px] md:text-[300px] font-bold text-purple-300 opacity-30 tracking-tighter font-sans">
             Trovex
           </span>
         </div>
 
         {/* Horizontal line above copyright info */}
-        <div className="container mx-auto px-4 -mt-[118px]">
+        <div className="container mx-auto px-4 -mt-8 sm:-mt-16 md:-mt-[118px]">
           <hr className="border-t-1 border-pink-300 opacity-60 my-4" />
 
           {/* Copyright section */}
-          <div className="flex flex-col md:flex-row justify-between items-center relative z-10">
-            <div className="mb-4 md:mb-0 text-gray-400">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 relative z-10 py-4">
+            <div className="text-center md:text-left text-xs sm:text-sm text-gray-400">
               © 2025 Cloudsprint Technologies Private Limited. All rights
               reserved.
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 text-xs sm:text-sm">
               <span className="text-gray-400">Designed by</span>
               <a href="#" className="text-white hover:underline">
                 24Seven.Design
               </a>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4 text-xs sm:text-sm">
               <a href="#" className="text-gray-400 hover:text-white">
                 Terms of Use
               </a>
