@@ -2,18 +2,30 @@ import React from "react";
 import Header from "./Header";
 import Avatar from "../assets/menicon.png";
 import design from "../assets/herosectiondesign.png";
-import reviews from "../assets/reviews.png"
+import reviews from "../assets/reviews.png";
+
+import logo1 from "../assets/logo1.png";
+import logo2 from "../assets/logo2.png";
+import logo3 from "../assets/logo3.png";
+import logo4 from "../assets/logo4.png";
+import logo5 from "../assets/logo5.png";
+import logo6 from "../assets/logo6.png";
+import logo7 from "../assets/logo7.png";
+// import logo8 from "../assets/logo8.png";
+
+const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7];
 
 const Hero = () => {
   return (
     // <div className="m-4 w-auto h-scree rounded-2xl">
-    <div class="flex flex-col gap-30 relative m-4 px-30 py-7 h-screen w-auto bg-white rounded-3xl font-sans">
+    <div class="flex flex-col gap-30 relative m-4 px-30 py-7 h-auto w-auto bg-white rounded-3xl font-sans">
       <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_1300px_at_50%_350px,#8254F3,transparent)] opacity-20 rounded-3xl"></div>
       {/* <div class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(199,63,162,.15),rgba(130,84,243,0))]"></div>
       <div class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(130,84,243,.15),rgba(199,63,162,0))]"></div> */}
       <div class="absolute bottom-0 left-0 right-0 top-10 bg-[radial-gradient(circle_400px_at_70%_380px,#8254F3,transparent)] opacity-40"></div>
-      <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_200px_at_75%_550px,#C73FA2,transparent)] opacity-70"></div>
-      <div class="absolute bottom-0 left-0 right-0 top-10 bg-[radial-gradient(circle_200px_at_5%_680px,#8254F3,transparent)] opacity-30"></div>
+      <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_200px_at_80%_550px,#C73FA2,transparent)] opacity-70"></div>
+      <div class="absolute bottom-0 left-0 right-0 top-10 bg-[radial-gradient(circle_200px_at_5%_680px,#8254F3,transparent)] opacity-30 rounded-3xl"></div>
+      <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_100px_at_95%_100px,#8254F3,transparent)] opacity-30"></div>
       {/* header */}
       <div className="header z-10">
         <Header />
@@ -23,12 +35,12 @@ const Hero = () => {
       <div className="flex flex-col md:flex-row items-center justify-between z-10">
         {/* Left Content */}
         <div className="max-w-xl space-y-6">
-        <div className="mt-2 inline-block border-2 border-purple-400 p-[2px] rounded-full">
-    <div className="bg-gradient-to-tr from-purple-300 to-transparent text-purple-700 px-3 py-1 rounded-full flex items-center space-x-2 text-xs text-gray-800">
-        <img src={reviews} alt="" className="w-3" />
-      <span>4.8 stars, 50+ reviews</span>
-    </div>
-  </div>
+          <div className="mt-2 inline-block border-2 border-purple-400 p-[2px] rounded-full">
+            <div className="bg-gradient-to-tr from-purple-300 to-transparent text-purple-700 px-3 py-1 rounded-full flex items-center space-x-2 text-xs text-gray-800">
+              <img src={reviews} alt="" className="w-3" />
+              <span>4.8 stars, 50+ reviews</span>
+            </div>
+          </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 font-sans">
             Sales Excellence Starts <br /> With{" "}
             <span className="bg-gradient-to-b from-purple-600 via-pink-400 to-pink-500 bg-clip-text text-transparent">
@@ -95,7 +107,44 @@ const Hero = () => {
         </div>
         {/* </div> */}
       </div>
-      //{" "}
+      {/* //{" bottom content "} */}
+      <div className="flex flex-col justify-center items-center z-11 gap-5">
+        <div className="flex flex-row justify-center items-center gap-2">
+          <p className="text-center">
+            Over&nbsp;
+            <span className="inline-block px-2 py-1 rounded-lg bg-white shadow-md">
+              <span className="bg-gradient-to-b from-purple-600 to-pink-500 bg-clip-text text-transparent font-semibold">
+                100+ companies
+              </span>
+            </span>
+            &nbsp;prefer&nbsp;
+            <span className="bg-gradient-to-b from-purple-600 to-pink-500 bg-clip-text text-transparent font-semibold">
+              Trovex AI
+            </span>
+            &nbsp;to train their sales and customer support teams.
+          </p>
+        </div>
+
+        <div className="relative w-full overflow-hidden py-4 bg-transparent">
+          {/* Left Transparent Fade */}
+          <div className="pointer-events-none absolute top-0 left-0 h-full w-24 bg-gradient-to-r from-transparent via-purple/10 to-transparent z-10" />
+
+          {/* Right Transparent Fade */}
+          <div className="pointer-events-none absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-transparent via-purple/10 to-transparent z-10" />
+
+          {/* Scrolling Logos */}
+          <div className="flex gap-8 w-max animate-scroll whitespace-nowrap">
+            {[...logos, ...logos].map((logo, index) => (
+              <img
+                key={index}
+                src={logo}
+                alt={`logo-${index}`}
+                className="h-12 transition duration-300 hover:brightness-75 opacity-40 hover:opacity-80"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
