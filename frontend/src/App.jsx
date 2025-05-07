@@ -9,6 +9,7 @@ import Rating from "./components/Rating";
 import FAQ from "./components/faqData";
 import { motion } from "framer-motion";
 import FeaturesSection from "./components/FeaturesSection";
+import layout from "./assets/layout.png"
 
 function App() {
   return (
@@ -17,25 +18,31 @@ function App() {
       <TrovesAISection />
       <Whytorvex />
       <SolveProblem />
-      <div className="max-w-3xl mx-auto px-4 py-16 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-2">
-          Everything you need to
-        </h1>
-        <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-b from-purple-600 to-pink-500 bg-clip-text text-transparent mb-6">
-          Upskill your Sales Force
-        </h2>
-        <p className="text-gray-700 mb-8">
-          Transform your sales reps into rockstars
-        </p>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ duration: 0.3 }}
-          className="bg-gradient-to-b from-purple-600 to-pink-500 text-white border border-transparent hover:bg-white hover:bg-none hover:text-purple-600 hover:border-purple-600 transition-all duration-500 ease-in-out px-6 py-3 rounded-lg font-semibold shadow-md"
-        >
-          Book a Demo
-        </motion.button>
-      </div>
+      <motion.div  initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }} className="flex flex-col justify-center items-center">
+        <div className="max-w-3xl mx-auto px-4 py-16 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-2">
+            Everything you need to
+          </h1>
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-b from-purple-600 to-pink-500 bg-clip-text text-transparent mb-6">
+            Upskill your Sales Force
+          </h2>
+          <p className="text-gray-700 mb-8">
+            Transform your sales reps into rockstars
+          </p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.3 }}
+            className="bg-gradient-to-b from-purple-600 to-pink-500 text-white border border-transparent hover:bg-white hover:bg-none hover:text-purple-600 hover:border-purple-600 transition-all duration-500 ease-in-out px-6 py-3 rounded-lg font-semibold shadow-md"
+          >
+            Book a Demo
+          </motion.button>
+        </div>
+        <img src={layout} alt=""/>
+      </motion.div>
       <Rating />
       <div className="max-w-3xl mx-auto px-4 py-16 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-2">
