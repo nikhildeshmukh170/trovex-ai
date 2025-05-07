@@ -3,6 +3,7 @@ import Header from "./Header";
 import Avatar from "../assets/menicon.png";
 import design from "../assets/herosectiondesign.png";
 import reviews from "../assets/reviews.png";
+import { motion } from "framer-motion";
 
 import logo1 from "../assets/logo1.png";
 import logo2 from "../assets/logo2.png";
@@ -32,7 +33,12 @@ const Hero = () => {
       </div>
       {/* main content */}
       {/* <div className="flex flex-row"> */}
-      <div className="flex flex-col md:flex-row items-center justify-between z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="flex flex-col md:flex-row items-center justify-between z-10"
+      >
         {/* Left Content */}
         <div className="max-w-xl space-y-6">
           <div className="mt-2 inline-block border-2 border-purple-400 p-[2px] rounded-full">
@@ -41,25 +47,46 @@ const Hero = () => {
               <span>4.8 stars, 50+ reviews</span>
             </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 font-sans">
+          <motion.h1
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-4xl md:text-5xl font-bold text-gray-900 font-sans"
+          >
             Sales Excellence Starts <br /> With{" "}
             <span className="bg-gradient-to-b from-purple-600 via-pink-400 to-pink-500 bg-clip-text text-transparent">
               Better Practice
             </span>
-          </h1>
-          <p className="text-gray-600">
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="text-gray-600"
+          >
             Trovex listens to every sales call, identifies what top reps do
-            differently, and builds AI-powered simulations that help your entire
-            team practice, improve, and win—at scale.
-          </p>
-          <button className="bg-gradient-to-b from-purple-600 to-pink-500 text-white border border-transparent hover:bg-white hover:bg-none hover:text-purple-600 hover:border-purple-600 transition-all duration-500 ease-in-out px-6 py-3 rounded-lg font-semibold shadow-md">
+            differently...
+          </motion.p>
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.3 }}
+            className="bg-gradient-to-b from-purple-600 to-pink-500 text-white border border-transparent hover:bg-white hover:bg-none hover:text-purple-600 hover:border-purple-600 transition-all duration-500 ease-in-out px-6 py-3 rounded-lg font-semibold shadow-md"
+          >
             Book a Demo
-          </button>
+          </motion.button>
         </div>
 
         {/* Right Chat UI */}
         <div className="relative mt-12 md:mt-0 md:ml-16 w-full max-w-sm">
-          <div className="absolute -left-15 -top-20 p-[2px] rounded-3xl bg-gradient-to-b from-purple-500 to-pink-500 w-72 shadow-lg">
+        <motion.div
+  initial={{ opacity: 0, scale: 0.8 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ delay: 0.6, duration: 0.5 }}
+  className="absolute -left-15 -top-20 p-[2px] rounded-3xl bg-gradient-to-b from-purple-500 to-pink-500 w-72 shadow-lg"
+>
             <div className="bg-white rounded-3xl p-4">
               <p className="text-md text-gray-700">
                 <span className="text-lg md:text-md font-bold bg-gradient-to-b from-purple-600 to-pink-500 bg-clip-text text-transparent">
@@ -103,10 +130,10 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
         {/* </div> */}
-      </div>
+      </motion.div>
       {/* //{" bottom content "} */}
       <div className="flex flex-col justify-center items-center z-11 gap-5">
         <div className="flex flex-row justify-center items-center gap-2">
