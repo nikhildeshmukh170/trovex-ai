@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import TrovesAISteps from "./TrovesAISteps";
+import aisectionbg from "../assets/aisectioncardbg.png";
 
 const AnimatedNumber = ({ value, duration = 2000, suffix = "" }) => {
   const [count, setCount] = useState(0);
@@ -119,7 +120,8 @@ const TrovesAISection = () => {
         </div>
       </div>
       <div>
-        <TrovesAISteps />
+        <img src={aisectionbg} alt="" className="z-10"/>
+        {/* <TrovesAISteps /> */}
       </div>
     </div>
   );
