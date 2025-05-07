@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Whytorvex from './components/whytorvex';
 import SolveProblem from './components/SolveProblem';
 import Rating from './components/Rating';
+import FAQ from './components/faqData';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Whytorvex />
       <SolveProblem />
       <Rating />
+      <FAQ />
       <Footer />
     </div>
   );
