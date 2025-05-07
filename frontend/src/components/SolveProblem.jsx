@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import womenimg from "../assets/women.png";
+import { motion } from "framer-motion";
 
 const SolveProblem = () => {
   const [persona, setPersona] = useState("Skeptical, Rude");
@@ -24,7 +25,12 @@ const SolveProblem = () => {
     <div className="py-16 px-4">
       <div className="max-w-7xl mx-auto flex flex-col justify-around lg:flex-row items-start gap-10">
         {/* Left column - Text content */}
-        <div className="w-full lg:w-[800px] sticky top-10">
+        <motion.div
+          className="w-full lg:w-[800px] sticky top-10"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+        >
           <h2 className="text-4xl md:text-5xl w-full lg:w-[500px] font-bold bg-gradient-to-b from-purple-600 to-pink-500 bg-clip-text text-transparent mb-6">
             How Trovex Solves These Problems
           </h2>
@@ -34,7 +40,7 @@ const SolveProblem = () => {
           <button className="bg-gradient-to-b from-purple-600 to-pink-500 text-white border border-transparent hover:bg-white hover:bg-none hover:text-purple-600 hover:border-purple-600 transition-all duration-500 ease-in-out px-6 py-3 rounded-lg font-semibold shadow-md">
             Book a Demo
           </button>
-        </div>
+        </motion.div>
 
         {/* Right column - Cards */}
         <div className="flex flex-col gap-10 w-full lg:w-auto top-10">

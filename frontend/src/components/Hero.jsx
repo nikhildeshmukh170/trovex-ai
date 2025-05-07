@@ -81,12 +81,12 @@ const Hero = () => {
 
         {/* Right Chat UI */}
         <div className="relative mt-12 md:mt-0 md:ml-16 w-full max-w-sm">
-        <motion.div
-  initial={{ opacity: 0, scale: 0.8 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ delay: 0.6, duration: 0.5 }}
-  className="absolute -left-15 -top-20 p-[2px] rounded-3xl bg-gradient-to-b from-purple-500 to-pink-500 w-72 shadow-lg"
->
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="absolute -left-15 -top-20 p-[2px] rounded-3xl bg-gradient-to-b from-purple-500 to-pink-500 w-72 shadow-lg"
+          >
             <div className="bg-white rounded-3xl p-4">
               <p className="text-md text-gray-700">
                 <span className="text-lg md:text-md font-bold bg-gradient-to-b from-purple-600 to-pink-500 bg-clip-text text-transparent">
