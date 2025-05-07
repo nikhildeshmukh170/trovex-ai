@@ -25,7 +25,7 @@ const Rating = () => {
       variants={fadeInUp}
     >
       <motion.div
-        className="flex flex-col gap-8 relative m-4 px-12 py-7 max-w-[1100px] w-full justify-center items-center align-middle bg-[#2f1043] rounded-3xl font-sans text-white"
+        className="flex flex-col gap-8 relative m-4 px-12 py-7 max-w-[1200px] w-full justify-center items-center align-middle bg-[#2f1043] rounded-3xl font-sans text-white"
         variants={zoomIn}
       >
         <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_200px_at_80%_100px,#ffb2a752,transparent)] opacity-70 rounded-3xl"></div>
